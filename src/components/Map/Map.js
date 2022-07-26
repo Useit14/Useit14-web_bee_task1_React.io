@@ -16,10 +16,14 @@ function Map() {
         let idCollapsePost = 'collapse-post-content' + propId
         let idCollapseImage = 'collapse-img' + propId
         const collapsePost = document.getElementById(idCollapsePost)
-        collapsePost.classList.toggle('show')
+        if(collapsePost){
+            collapsePost.classList.toggle('show')
+        }
         const imgCollapse = document.getElementById(idCollapseImage)
-        imgCollapse.classList.toggle('arrow-up')
-        imgCollapse.classList.toggle('arrow-down')
+        if (imgCollapse){
+            imgCollapse.classList.toggle('arrow-up')
+            imgCollapse.classList.toggle('arrow-down')
+        }
     };
 
     return (
@@ -36,9 +40,9 @@ function Map() {
                             <div>
                                 <a
                                     data-bs-toggle="collapse"
-                                    onClick={() => dropNavigationClick(1)}
+                                    onClick={() => dropNavigationClick(2)}
                                     className="arrow-up"
-                                    id='collapse-img1'
+                                    id='collapse-img2'
                                 ></a>
                             </div>
                             <div>
@@ -53,7 +57,7 @@ function Map() {
                             </div>
                         </div>
                     </div>
-                    <div className="map-collapse collapse show" id='collapse-post-content1'>
+                    <div className="map-collapse collapse show" id='collapse-post-content2'>
                         <div
                             className="row align-items-center justify-content-center content-block-style content-block-sectoring"
                             id="map-preloader"

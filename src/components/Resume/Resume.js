@@ -21,10 +21,14 @@ function Resume() {
         let idCollapsePost = 'collapse-post-content' + propId
         let idCollapseImage = 'collapse-img' + propId
         const collapsePost = document.getElementById(idCollapsePost)
-        collapsePost.classList.toggle('show')
+        if(collapsePost){
+            collapsePost.classList.toggle('show')
+        }
         const imgCollapse = document.getElementById(idCollapseImage)
-        imgCollapse.classList.toggle('arrow-up')
-        imgCollapse.classList.toggle('arrow-down')
+        if (imgCollapse){
+            imgCollapse.classList.toggle('arrow-up')
+            imgCollapse.classList.toggle('arrow-down')
+        }
     };
 
     return (
@@ -42,9 +46,9 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(1)}
+                                            onClick={() => dropNavigationClick(2)}
                                             className="arrow-up"
-                                            id="collapse-img1"
+                                            id="collapse-img2"
                                         >
                                         </a>
                                     </div>
@@ -52,7 +56,7 @@ function Resume() {
                             </div>
                             <div
                                 className="collapse-post-content collapse show"
-                                id="collapse-post-content1"
+                                id="collapse-post-content2"
                             >
                                 <div>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -80,9 +84,9 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(2)}
+                                            onClick={() => dropNavigationClick(3)}
                                             className="arrow-down"
-                                            id="collapse-img2"
+                                            id="collapse-img3"
                                         >
                                         </a>
                                     </div>
@@ -90,7 +94,7 @@ function Resume() {
                             </div>
                             <div
                                 className="row collapse-post-content collapse justify-content-between"
-                                id="collapse-post-content2"
+                                id="collapse-post-content3"
                             >
                                 <div className="col-lg-4 card bg-dark">
                                     <img src={Wireframe} alt=''/>
@@ -137,9 +141,9 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(3)}
+                                            onClick={() => dropNavigationClick(4)}
                                             className="arrow-down"
-                                            id="collapse-img3"
+                                            id="collapse-img4"
                                         >
                                         </a>
                                     </div>
@@ -147,7 +151,7 @@ function Resume() {
                             </div>
                             <div
                                 className="collapse collapse-post-content"
-                                id="collapse-post-content3"
+                                id="collapse-post-content4"
                             >
                                 <div>
                                     Both UX designers and UI designers use visual design
@@ -169,9 +173,9 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(4)}
+                                            onClick={() => dropNavigationClick(5)}
                                             className="arrow-down"
-                                            id="collapse-img4"
+                                            id="collapse-img5"
                                         >
                                         </a>
                                     </div>
@@ -179,7 +183,7 @@ function Resume() {
                             </div>
                             <div
                                 className="collapse collapse-post-content"
-                                id="collapse-post-content4"
+                                id="collapse-post-content5"
                             >
                                 <div>
                                     To design a product that solves a user problem, meets a user
@@ -204,9 +208,9 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(5)}
+                                            onClick={() => dropNavigationClick(6)}
                                             className="arrow-down"
-                                            id="collapse-img5"
+                                            id="collapse-img6"
                                         >
                                         </a>
                                     </div>
@@ -214,7 +218,7 @@ function Resume() {
                             </div>
                             <div
                                 className="collapse collapse-post-content"
-                                id="collapse-post-content5"
+                                id="collapse-post-content6"
                             >
                                 <div>
                                     Agile, a set of project management practices popular in the
@@ -241,9 +245,9 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(6)}
+                                            onClick={() => dropNavigationClick(7)}
                                             className="arrow-down"
-                                            id="collapse-img6"
+                                            id="collapse-img7"
                                         >
                                         </a>
                                     </div>
@@ -251,7 +255,7 @@ function Resume() {
                             </div>
                             <div
                                 className="collapse collapse-post-content"
-                                id="collapse-post-content6"
+                                id="collapse-post-content7"
                             >
                                 <div>
                                     Information architecture (IA) involves effectively
@@ -296,14 +300,14 @@ function Resume() {
                                 <span>Navigation</span>
                                 <a
                                     className="arrow-down"
-                                    onClick={() => dropNavigationClick(7)}
+                                    onClick={() => dropNavigationClick(8)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    id='collapse-img7'
+                                    id='collapse-img8'
                                 >
                                 </a>
                             </button>
-                            <ul className="navbar-collapse collapse dropNavigation" id='collapse-post-content7'>
+                            <ul className="navbar-collapse collapse dropNavigation" id='collapse-post-content8'>
                                 <li className="nav-item">
                                     <a className="nav-link">
                                         <img src={myProfile} alt=''/>
@@ -379,15 +383,15 @@ function Resume() {
                                 <span>Contacts</span>
 
                                 <a
-                                    onClick={() => dropNavigationClick(8)}
+                                    onClick={() => dropNavigationClick(9)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
                                     className="arrow-down"
-                                    id='collapse-img8'
+                                    id='collapse-img9'
                                 >
                                 </a>
                             </button>
-                            <div className="dropForm collapse" id='collapse-post-content8'>
+                            <div className="dropForm collapse" id='collapse-post-content9'>
                                 <div>
                                     <img src={phone} alt=''/>
                                     <span>+7 977 588 18 24</span>

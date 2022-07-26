@@ -19,10 +19,14 @@ function Index() {
         let idCollapsePost = 'collapse-post-content' + propId
         let idCollapseImage = 'collapse-img' + propId
         const collapsePost = document.getElementById(idCollapsePost)
-        collapsePost.classList.toggle('show')
+        if(collapsePost){
+            collapsePost.classList.toggle('show')
+        }
         const imgCollapse = document.getElementById(idCollapseImage)
-        imgCollapse.classList.toggle('arrow-up')
-        imgCollapse.classList.toggle('arrow-down')
+        if (imgCollapse){
+            imgCollapse.classList.toggle('arrow-up')
+            imgCollapse.classList.toggle('arrow-down')
+        }
     };
 
     return (
@@ -88,16 +92,16 @@ function Index() {
                                                     <a
                                                         role="button"
                                                         data-bs-toggle="collapse"
-                                                        onClick={() => dropNavigationClick(1)}
+                                                        onClick={() => dropNavigationClick(2)}
                                                         className="arrow-down"
-                                                        id='collapse-img1'
+                                                        id='collapse-img2'
                                                     >
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="collapse collapse-post-content" id='collapse-post-content1'>
+                                    <div className="collapse collapse-post-content" id='collapse-post-content2'>
                                         <div>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing
                                             elit. Modi ipsum inventore error exercitationem est,
@@ -145,14 +149,14 @@ function Index() {
                                 <span>Navigation</span>
                                 <a
                                     className="arrow-down"
-                                    onClick={() => dropNavigationClick(2)}
+                                    onClick={() => dropNavigationClick(3)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    id='collapse-img2'
+                                    id='collapse-img3'
                                 >
                                 </a>
                             </button>
-                            <ul className="navbar-collapse collapse dropNavigation" id='collapse-post-content2'>
+                            <ul className="navbar-collapse collapse dropNavigation" id='collapse-post-content3'>
                                 <li className="nav-item">
                                     <a className="nav-link">
                                         <img src={myProfile} alt=''/>
@@ -229,14 +233,14 @@ function Index() {
 
                                 <a
                                     className="arrow-down"
-                                    onClick={() => dropNavigationClick(3)}
+                                    onClick={() => dropNavigationClick(4)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    id='collapse-img3'
+                                    id='collapse-img4'
                                 >
                                 </a>
                             </button>
-                            <div className="dropForm collapse" id='collapse-post-content3'>
+                            <div className="dropForm collapse" id='collapse-post-content4'>
                                 <div>
                     <textarea
                         className="form-control"

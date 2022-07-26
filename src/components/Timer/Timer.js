@@ -42,10 +42,14 @@ function Timer() {
         let idCollapsePost = 'collapse-post-content' + propId
         let idCollapseImage = 'collapse-img' + propId
         const collapsePost = document.getElementById(idCollapsePost)
-        collapsePost.classList.toggle('show')
+        if(collapsePost){
+            collapsePost.classList.toggle('show')
+        }
         const imgCollapse = document.getElementById(idCollapseImage)
-        imgCollapse.classList.toggle('arrow-up')
-        imgCollapse.classList.toggle('arrow-down')
+        if (imgCollapse){
+            imgCollapse.classList.toggle('arrow-up')
+            imgCollapse.classList.toggle('arrow-down')
+        }
     };
 
     return (
@@ -62,9 +66,9 @@ function Timer() {
                             </a>
                             <a
                                 data-bs-toggle="collapse"
-                                onClick={() => dropNavigationClick(1)}
+                                onClick={() => dropNavigationClick(2)}
                                 className="arrow-up"
-                                id="collapse-img1"
+                                id="collapse-img2"
                             >
                             </a>
                             <a>
@@ -74,7 +78,7 @@ function Timer() {
                             <img src={close} alt=''/>
                         </div>
                     </div>
-                    <div id="collapse-post-content1" className="timer map-collapse collapse show">
+                    <div id="collapse-post-content2" className="timer map-collapse collapse show">
                         <span id="hour">0</span>
                         <span id="minutes">0</span>
                         <span id="seconds">0</span>

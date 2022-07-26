@@ -19,6 +19,20 @@ function Header() {
     const navigate = useNavigate()
     const goBack = () => navigate(-1)
 
+    const dropNavigationClick = propId => {
+        let idCollapsePost = 'collapse-post-content' + propId
+        let idCollapseImage = 'collapse-img' + propId
+        const collapsePost = document.getElementById(idCollapsePost)
+        if(collapsePost){
+            collapsePost.classList.toggle('show')
+        }
+        const imgCollapse = document.getElementById(idCollapseImage)
+        if (imgCollapse){
+            imgCollapse.classList.toggle('arrow-up')
+            imgCollapse.classList.toggle('arrow-down')
+        }
+    };
+
     return (
         <div>
             <nav className="navbar navbar-expand-sm menu-sectoring justify-content-between">
@@ -82,6 +96,7 @@ function Header() {
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseSubmenu"
                     aria-expanded="false"
+                    onClick={()=>dropNavigationClick(1)}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +113,7 @@ function Header() {
                 </button>
                 <div
                     className="collapse navbar-collapse justify-content-between"
-                    id="collapseSubmenu"
+                    id="collapse-post-content1"
                 >
                     <ul className="nav col-lg-4 submenu bg-light">
                         <li className="nav-item">
