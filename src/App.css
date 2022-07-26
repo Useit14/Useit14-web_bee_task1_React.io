@@ -314,12 +314,12 @@ iframe {
 }
 
 .arrow-down {
-    content: url(../public/arrowDown.png);
+    content: url(./arrowDown.png);
 }
 
 
 .arrow-up {
-    content: url(../public/arrowUp.png);
+    content: url(./arrowUp.png);
 }
 
 .dropNavigation li {
