@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Protorype from './Protorype.jpg'
 import settings from './settings.png'
 import avatar from './avatar.jpg'
@@ -17,19 +17,38 @@ import myProfile from './myProfile.png'
 import phone from './phone.png'
 
 function Resume() {
-    const dropNavigationClick = propId => {
-        let idCollapsePost = 'collapse-post-content' + propId
-        let idCollapseImage = 'collapse-img' + propId
-        const collapsePost = document.getElementById(idCollapsePost)
-        if(collapsePost){
-            collapsePost.classList.toggle('show')
+
+    const [show1, setShow1] = useState('show')
+    const [show2, setShow2] = useState(' ')
+    const [show3, setShow3] = useState(' ')
+    const [show4, setShow4] = useState(' ')
+    const [show5, setShow5] = useState(' ')
+    const [show6, setShow6] = useState(' ')
+    const [show7, setShow7] = useState(' ')
+    const [show8, setShow8] = useState(' ')
+    const [arrow1, setArrow1] = useState('arrow-up')
+    const [arrow2, setArrow2] = useState('arrow-down')
+    const [arrow3, setArrow3] = useState('arrow-down')
+    const [arrow4, setArrow4] = useState('arrow-down')
+    const [arrow5, setArrow5] = useState('arrow-down')
+    const [arrow6, setArrow6] = useState('arrow-down')
+    const [arrow7, setArrow7] = useState('arrow-down')
+    const [arrow8, setArrow8] = useState('arrow-down')
+
+
+    const dropNavigationClick = (arrow, show, setShow, setArrow) => {
+        if (arrow == 'arrow-up') {
+            setArrow('arrow-down')
+        } else {
+            setArrow('arrow-up')
         }
-        const imgCollapse = document.getElementById(idCollapseImage)
-        if (imgCollapse){
-            imgCollapse.classList.toggle('arrow-up')
-            imgCollapse.classList.toggle('arrow-down')
+        if (show == 'show') {
+            setShow(' ')
+        } else {
+            setShow('show')
         }
     };
+
 
     return (
         <div id="content">
@@ -46,17 +65,15 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(2)}
-                                            className="arrow-up"
-                                            id="collapse-img2"
+                                            onClick={() => dropNavigationClick(arrow1, show1, setShow1, setArrow1)}
+                                            className={arrow1}
                                         >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className="collapse-post-content collapse show"
-                                id="collapse-post-content2"
+                                className={`collapse-post-content collapse ${show1}`}
                             >
                                 <div>
                                     Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -84,17 +101,15 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(3)}
-                                            className="arrow-down"
-                                            id="collapse-img3"
+                                            onClick={() => dropNavigationClick(arrow2, show2, setShow2, setArrow2)}
+                                            className={arrow2}
                                         >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className="row collapse-post-content collapse justify-content-between"
-                                id="collapse-post-content3"
+                                className={`row collapse-post-content collapse justify-content-between ${show2}`}
                             >
                                 <div className="col-lg-4 card bg-dark">
                                     <img src={Wireframe} alt=''/>
@@ -141,17 +156,15 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(4)}
-                                            className="arrow-down"
-                                            id="collapse-img4"
+                                            onClick={() => dropNavigationClick(arrow3, show3, setShow3, setArrow3)}
+                                            className={arrow3}
                                         >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className="collapse collapse-post-content"
-                                id="collapse-post-content4"
+                                className={`collapse collapse-post-content ${show3}`}
                             >
                                 <div>
                                     Both UX designers and UI designers use visual design
@@ -173,17 +186,15 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(5)}
-                                            className="arrow-down"
-                                            id="collapse-img5"
+                                            onClick={() => dropNavigationClick(arrow4, show4, setShow4, setArrow4)}
+                                            className={arrow4}
                                         >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className="collapse collapse-post-content"
-                                id="collapse-post-content5"
+                                className={`collapse collapse-post-content ${show4}`}
                             >
                                 <div>
                                     To design a product that solves a user problem, meets a user
@@ -208,17 +219,15 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(6)}
-                                            className="arrow-down"
-                                            id="collapse-img6"
+                                            onClick={() => dropNavigationClick(arrow5, show5, setShow5, setArrow5)}
+                                            className={arrow5}
                                         >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className="collapse collapse-post-content"
-                                id="collapse-post-content6"
+                                className={`collapse collapse-post-content ${show5}`}
                             >
                                 <div>
                                     Agile, a set of project management practices popular in the
@@ -245,17 +254,15 @@ function Resume() {
                                         <a
                                             role="button"
                                             data-bs-toggle="collapse"
-                                            onClick={() => dropNavigationClick(7)}
-                                            className="arrow-down"
-                                            id="collapse-img7"
+                                            onClick={() => dropNavigationClick(arrow6, show6, setShow6, setArrow6)}
+                                            className={arrow6}
                                         >
                                         </a>
                                     </div>
                                 </div>
                             </div>
                             <div
-                                className="collapse collapse-post-content"
-                                id="collapse-post-content7"
+                                className={`collapse collapse-post-content ${show6}`}
                             >
                                 <div>
                                     Information architecture (IA) involves effectively
@@ -298,15 +305,14 @@ function Resume() {
                             >
                                 <span>Navigation</span>
                                 <a
-                                    className="arrow-down"
-                                    onClick={() => dropNavigationClick(8)}
+                                    className={arrow7}
+                                    onClick={() => dropNavigationClick(arrow7, show7, setShow7, setArrow7)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    id='collapse-img8'
                                 >
                                 </a>
                             </button>
-                            <ul className="navbar-collapse collapse drop-navigation" id='collapse-post-content8'>
+                            <ul className={`navbar-collapse collapse drop-navigation ${show7}`}>
                                 <li className="nav-item">
                                     <a className="nav-link">
                                         <img src={myProfile} alt=''/>
@@ -382,15 +388,14 @@ function Resume() {
                                 <span>Contacts</span>
 
                                 <a
-                                    onClick={() => dropNavigationClick(9)}
+                                    onClick={() => dropNavigationClick(arrow8, show8, setShow8, setArrow8)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    className="arrow-down"
-                                    id='collapse-img9'
+                                    className={arrow8}
                                 >
                                 </a>
                             </button>
-                            <div className="drop-form collapse" id='collapse-post-content9'>
+                            <div className={`drop-form collapse ${show8}`}>
                                 <div>
                                     <img src={phone} alt=''/>
                                     <span>+7 977 588 18 24</span>

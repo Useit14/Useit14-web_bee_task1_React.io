@@ -1,10 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import close from './close.png'
 import preloader from './preloader.gif'
 import refresh from './refresh.png'
 
-
 function Map() {
+
+    const [show, setShow] = useState('show')
+    const [arrow, setArrow] = useState('arrow-up')
+
     function mapLoad() {
         const preloader = document.getElementById('map-preloader');
         if (preloader) {
@@ -12,18 +15,18 @@ function Map() {
         }
     }
 
-    const dropNavigationClick = propId => {
-        let idCollapsePost = 'collapse-post-content' + propId
-        let idCollapseImage = 'collapse-img' + propId
-        const collapsePost = document.getElementById(idCollapsePost)
-        if(collapsePost){
-            collapsePost.classList.toggle('show')
+    const dropNavigationClick = () => {
+        if (arrow == 'arrow-up') {
+            setArrow('arrow-down')
+        } else {
+            setArrow('arrow-up')
         }
-        const imgCollapse = document.getElementById(idCollapseImage)
-        if (imgCollapse){
-            imgCollapse.classList.toggle('arrow-up')
-            imgCollapse.classList.toggle('arrow-down')
+        if (show == 'show') {
+            setShow(' ')
+        } else {
+            setShow('show')
         }
+
     };
 
     return (
@@ -40,9 +43,8 @@ function Map() {
                             <div>
                                 <a
                                     data-bs-toggle="collapse"
-                                    onClick={() => dropNavigationClick(2)}
-                                    className="arrow-up"
-                                    id='collapse-img2'
+                                    onClick={() => dropNavigationClick()}
+                                    className={arrow}
                                 ></a>
                             </div>
                             <div>
@@ -57,7 +59,7 @@ function Map() {
                             </div>
                         </div>
                     </div>
-                    <div className="map-collapse collapse show" id='collapse-post-content2'>
+                    <div className={`map-collapse collapse ${show}`}>
                         <div
                             className="row align-items-center justify-content-center content-block-style content-block-sectoring"
                             id="map-preloader"

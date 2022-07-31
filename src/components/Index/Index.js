@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import avatar from './avatar.jpg';
 import balance from './balance.png';
 import comments from './comments.png';
@@ -15,17 +15,25 @@ import time from './time.png';
 import twitter from './twitter.png';
 
 function Index() {
-    const dropNavigationClick = propId => {
-        let idCollapsePost = 'collapse-post-content' + propId
-        let idCollapseImage = 'collapse-img' + propId
-        const collapsePost = document.getElementById(idCollapsePost)
-        if(collapsePost){
-            collapsePost.classList.toggle('show')
+
+    const [show1, setShow1] = useState(' ')
+    const [show2, setShow2] = useState(' ')
+    const [show3, setShow3] = useState(' ')
+    const [arrow1, setArrow1] = useState('arrow-down')
+    const [arrow2, setArrow2] = useState('arrow-down')
+    const [arrow3, setArrow3] = useState('arrow-down')
+
+
+    const dropNavigationClick = (arrow, show, setShow, setArrow) => {
+        if (arrow == 'arrow-up') {
+            setArrow('arrow-down')
+        } else {
+            setArrow('arrow-up')
         }
-        const imgCollapse = document.getElementById(idCollapseImage)
-        if (imgCollapse){
-            imgCollapse.classList.toggle('arrow-up')
-            imgCollapse.classList.toggle('arrow-down')
+        if (show == 'show') {
+            setShow(' ')
+        } else {
+            setShow('show')
         }
     };
 
@@ -92,16 +100,15 @@ function Index() {
                                                     <a
                                                         role="button"
                                                         data-bs-toggle="collapse"
-                                                        onClick={() => dropNavigationClick(2)}
-                                                        className="arrow-down"
-                                                        id='collapse-img2'
+                                                        onClick={() => dropNavigationClick(arrow1, show1, setShow1, setArrow1)}
+                                                        className={arrow1}
                                                     >
                                                     </a>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="collapse collapse-post-content" id='collapse-post-content2'>
+                                    <div className={`collapse collapse-post-content ${show1}`}>
                                         <div>
                                             Lorem ipsum dolor sit amet, consectetur adipisicing
                                             elit. Modi ipsum inventore error exercitationem est,
@@ -147,15 +154,14 @@ function Index() {
                             >
                                 <span>Navigation</span>
                                 <a
-                                    className="arrow-down"
-                                    onClick={() => dropNavigationClick(3)}
+                                    className={arrow2}
+                                    onClick={() => dropNavigationClick(arrow2, show2, setShow2, setArrow2)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    id='collapse-img3'
                                 >
                                 </a>
                             </button>
-                            <ul className="navbar-collapse collapse drop-navigation" id='collapse-post-content3'>
+                            <ul className={`navbar-collapse collapse drop-navigation ${show2}`}>
                                 <li className="nav-item">
                                     <a className="nav-link">
                                         <img src={myProfile} alt=''/>
@@ -231,15 +237,15 @@ function Index() {
                                 <span>Share your thoughts</span>
 
                                 <a
-                                    className="arrow-down"
-                                    onClick={() => dropNavigationClick(4)}
+                                    className={arrow3}
+                                    onClick={() => dropNavigationClick(arrow3, show3, setShow3, setArrow3)}
                                     data-bs-toggle="collapse"
                                     aria-expanded="false"
-                                    id='collapse-img4'
+
                                 >
                                 </a>
                             </button>
-                            <div className="drop-form collapse" id='collapse-post-content4'>
+                            <div className={`drop-form collapse ${show3}`}>
                                 <div>
                     <textarea
                         className="form-control"

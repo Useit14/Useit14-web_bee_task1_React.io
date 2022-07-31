@@ -11,37 +11,37 @@ import {Navigate} from "react-router";
 
 function App() {
 
-    const [countSeconds,setCountSeconds]=useState(0)
-    const [seconds,setSeconds] = useState(0);
-    const [minutes,setMinutes] = useState(0);
-    const [hour,setHour] = useState(0);
+    const [countSeconds, setCountSeconds] = useState(0)
+    const [seconds, setSeconds] = useState(0);
+    const [minutes, setMinutes] = useState(0);
+    const [hour, setHour] = useState(0);
 
-  return (
-    <div className="App">
-        <BrowserRouter>
-            <Header/>
-        <Routes>
-            <Route element={<Navigate to='/index' replace/>}  path="/"/>
-            <Route element={<Index/>} path="/index"/>
-            <Route element={
-                <Timer
-                seconds={seconds}
-                minutes={minutes}
-                hour={hour}
-                countSeconds={countSeconds}
-                setCountSeconds={setCountSeconds}
-                setSeconds={setSeconds}
-                setMinutes={setMinutes}
-                setHour={setHour}
-                />}
-                path="/timer"/>
-            <Route element={<Map/>} path="/map"/>
-            <Route element={<Resume/>} path="/resume"/>
-        </Routes>
-        </BrowserRouter>
-    </div>
+    return (
+        <div className="App">
+            <BrowserRouter>
+                <Header/>
+                <Routes>
+                    <Route element={<Navigate to='/index' replace/>} path="/"/>
+                    <Route element={<Index/>} path="/index"/>
+                    <Route element={
+                        <Timer
+                            seconds={seconds}
+                            minutes={minutes}
+                            hour={hour}
+                            countSeconds={countSeconds}
+                            setCountSeconds={setCountSeconds}
+                            setSeconds={setSeconds}
+                            setMinutes={setMinutes}
+                            setHour={setHour}
+                        />}
+                           path="/timer"/>
+                    <Route element={<Map/>} path="/map"/>
+                    <Route element={<Resume/>} path="/resume"/>
+                </Routes>
+            </BrowserRouter>
+        </div>
 
-  );
+    );
 }
 
 export default App;

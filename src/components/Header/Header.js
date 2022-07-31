@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import {Link} from 'react-router-dom'
 import activity from './acivity.png'
 import arrowDown from './arrowDown.png'
@@ -15,22 +15,20 @@ import Union2 from './Union2.png'
 import Union3 from './Union3.png'
 import {useNavigate} from 'react-router-dom';
 
+
 function Header() {
     const navigate = useNavigate()
+    const [show, setShow] = useState(' ')
+
     const goBack = () => navigate(-1)
 
-    const dropNavigationClick = propId => {
-        let idCollapsePost = 'collapse-post-content' + propId
-        let idCollapseImage = 'collapse-img' + propId
-        const collapsePost = document.getElementById(idCollapsePost)
-        if(collapsePost){
-            collapsePost.classList.toggle('show')
+    const dropNavigationClick = () => {
+        if (show == 'show') {
+            setShow(' ')
+        } else {
+            setShow('show')
         }
-        const imgCollapse = document.getElementById(idCollapseImage)
-        if (imgCollapse){
-            imgCollapse.classList.toggle('arrow-up')
-            imgCollapse.classList.toggle('arrow-down')
-        }
+
     };
 
     return (
@@ -96,7 +94,7 @@ function Header() {
                     data-bs-toggle="collapse"
                     data-bs-target="#collapseSubmenu"
                     aria-expanded="false"
-                    onClick={()=>dropNavigationClick(1)}
+                    onClick={() => dropNavigationClick()}
                 >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -112,8 +110,7 @@ function Header() {
                     </svg>
                 </button>
                 <div
-                    className="collapse navbar-collapse justify-content-between"
-                    id="collapse-post-content1"
+                    className={`collapse navbar-collapse justify-content-between ${show}`}
                 >
                     <ul className="nav col-lg-4 submenu bg-light">
                         <li className="nav-item">

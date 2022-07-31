@@ -3,13 +3,14 @@
     padding: 0;
 }
 
-ul li .nav-link , ul li a{
+ul li .nav-link, ul li a {
     text-decoration: none;
     color: black;
 }
 
-a:hover {
+ul li a:hover, ul li .nav-link:hover {
     cursor: pointer;
+    color: black;
 }
 
 li {
@@ -24,7 +25,6 @@ body {
     padding: 11px 31px 8px 37px !important;
     height: 64px;
 }
-
 
 .collapse-submenu {
     z-index: 3;
@@ -78,7 +78,6 @@ body {
 .submenu-sectoring li div img {
     margin-right: 10.79px !important;
 }
-
 
 .content-sectoring {
     padding: 32px 32px 29px 32px !important;
