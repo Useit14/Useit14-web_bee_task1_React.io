@@ -275,8 +275,7 @@ function Resume() {
                     </div>
                     <div className="col-lg-2 content-right-sectoring">
                         <div
-                            className="row content-block-style text-center content-right-block-sectoring justify-content-center"
-                            id="avatar"
+                            className="row avatar content-block-style text-center content-right-block-sectoring justify-content-center"
                         >
                             <div>
                                 <img className="img-fluid" src={avatar} alt=''/>
@@ -285,7 +284,7 @@ function Resume() {
                                 <p>Hanna Dorman</p>
                                 <p className="text-secondary"><small>UX/UI designer</small></p>
                             </div>
-                            <div className='avatarLogos'>
+                            <div className='avatar-logos'>
                                 <img src={telegram} alt=''/>
                                 <img src={hh} alt=''/>
                                 <img src={twitter} alt=''/>
@@ -295,7 +294,7 @@ function Resume() {
                             className="row content-block-style content-right-block-sectoring"
                         >
                             <button
-                                className="d-flex justify-content-between dropNavigation-header"
+                                className="d-flex justify-content-between drop-navigation-header"
                             >
                                 <span>Navigation</span>
                                 <a
@@ -307,7 +306,7 @@ function Resume() {
                                 >
                                 </a>
                             </button>
-                            <ul className="navbar-collapse collapse dropNavigation" id='collapse-post-content8'>
+                            <ul className="navbar-collapse collapse drop-navigation" id='collapse-post-content8'>
                                 <li className="nav-item">
                                     <a className="nav-link">
                                         <img src={myProfile} alt=''/>
@@ -378,7 +377,7 @@ function Resume() {
                             className="row content-block-style content-right-block-sectoring"
                         >
                             <button
-                                className="d-flex justify-content-between dropNavigation-header"
+                                className="d-flex justify-content-between drop-navigation-header"
                             >
                                 <span>Contacts</span>
 
@@ -391,7 +390,7 @@ function Resume() {
                                 >
                                 </a>
                             </button>
-                            <div className="dropForm collapse" id='collapse-post-content9'>
+                            <div className="drop-form collapse" id='collapse-post-content9'>
                                 <div>
                                     <img src={phone} alt=''/>
                                     <span>+7 977 588 18 24</span>

@@ -124,8 +124,7 @@ function Index() {
                     </div>
                     <div className="col-lg-2 content-right-sectoring">
                         <div
-                            className="row content-block-style text-center justify-content-center"
-                            id="avatar"
+                            className="row avatar content-block-style text-center justify-content-center"
                         >
                             <div>
                                 <img className="img-fluid" src={avatar} alt=''/>
@@ -134,7 +133,7 @@ function Index() {
                                 <p>Hanna Dorman</p>
                                 <p className="text-secondary"><small>UX/UI designer</small></p>
                             </div>
-                            <div className='avatarLogos'>
+                            <div className='avatar-logos'>
                                 <img src={telegram} alt=''/>
                                 <img src={hh} alt=''/>
                                 <img src={twitter} alt=''/>
@@ -144,7 +143,7 @@ function Index() {
                             className="row content-block-style content-right-block-sectoring"
                         >
                             <button
-                                className="d-flex justify-content-between dropNavigation-header"
+                                className="d-flex justify-content-between drop-navigation-header"
                             >
                                 <span>Navigation</span>
                                 <a
@@ -156,7 +155,7 @@ function Index() {
                                 >
                                 </a>
                             </button>
-                            <ul className="navbar-collapse collapse dropNavigation" id='collapse-post-content3'>
+                            <ul className="navbar-collapse collapse drop-navigation" id='collapse-post-content3'>
                                 <li className="nav-item">
                                     <a className="nav-link">
                                         <img src={myProfile} alt=''/>
@@ -227,7 +226,7 @@ function Index() {
                             className="row content-block-style content-right-block-sectoring"
                         >
                             <button
-                                className="d-flex justify-content-between dropNavigation-header"
+                                className="d-flex justify-content-between drop-navigation-header"
                             >
                                 <span>Share your thoughts</span>
 
@@ -240,7 +239,7 @@ function Index() {
                                 >
                                 </a>
                             </button>
-                            <div className="dropForm collapse" id='collapse-post-content4'>
+                            <div className="drop-form collapse" id='collapse-post-content4'>
                                 <div>
                     <textarea
                         className="form-control"

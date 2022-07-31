@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import './App.css';
 import Header from './components/Header/Header.js'
 import Index from './components/Index/Index'
@@ -10,15 +10,31 @@ import {Routes, Route, BrowserRouter} from 'react-router-dom';
 import {Navigate} from "react-router";
 
 function App() {
-  return (
 
+    const [countSeconds,setCountSeconds]=useState(0)
+    const [seconds,setSeconds] = useState(0);
+    const [minutes,setMinutes] = useState(0);
+    const [hour,setHour] = useState(0);
+
+  return (
     <div className="App">
         <BrowserRouter>
             <Header/>
         <Routes>
             <Route element={<Navigate to='/index' replace/>}  path="/"/>
             <Route element={<Index/>} path="/index"/>
-            <Route element={<Timer/>} path="/timer"/>
+            <Route element={
+                <Timer
+                seconds={seconds}
+                minutes={minutes}
+                hour={hour}
+                countSeconds={countSeconds}
+                setCountSeconds={setCountSeconds}
+                setSeconds={setSeconds}
+                setMinutes={setMinutes}
+                setHour={setHour}
+                />}
+                path="/timer"/>
             <Route element={<Map/>} path="/map"/>
             <Route element={<Resume/>} path="/resume"/>
         </Routes>

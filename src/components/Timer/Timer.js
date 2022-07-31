@@ -1,41 +1,42 @@
-import React from "react";
+import React, {useEffect} from "react";
 import close from './close.png'
 import play from './play.png'
 import refresh from './refresh.png'
 
-function Timer() {
-    let countSeconds = 0;
-    let timerId = 0;
+function Timer(props) {
 
-    function startTimer() {
-        if (countSeconds === 0) {
-            timerId = setInterval(function () {
-                countSeconds++;
-                printTimer();
-            }, 1000);
-        } else {
-            refreshTimer();
-        }
+    let timerId=0
+
+     const getSeconds = () => {
+        return props.countSeconds - (props.hour * 3600 + props.minutes * 60);
     }
+    const getMinutes = () => {
+        return  Math.floor((props.countSeconds - props.hour * 3600) / 60);
+    }
+    const getHour = () =>{
+        return  Math.floor(props.countSeconds / 3600);
+    }
+
+
+    useEffect(()=>{
+        if(props.countSeconds>0){
+            timerId=setTimeout(()=>{
+                props.setCountSeconds(props.countSeconds+1)
+                printTimer()
+            },1000)
+        }
+    })
 
     function printTimer() {
-        const seconds = document.getElementById('seconds');
-        const minutes = document.getElementById('minutes');
-        const hour = document.getElementById('hour');
-        if (seconds) {
-            hour.textContent = Math.floor(countSeconds / 3600);
-            minutes.textContent = Math.floor(
-                (countSeconds - hour.textContent * 3600) / 60,
-            );
-            seconds.textContent =
-                countSeconds - (hour.textContent * 3600 + minutes.textContent * 60);
-        }
+        props.setSeconds(getSeconds)
+        props.setMinutes(getMinutes)
+        props.setHour(getHour)
     }
 
+
     function refreshTimer() {
-        clearInterval(timerId);
-        countSeconds = 0;
-        startTimer();
+         clearTimeout(timerId)
+        props.setCountSeconds(1)
     }
 
     const dropNavigationClick = propId => {
@@ -62,7 +63,7 @@ function Timer() {
                         </div>
                         <div className="toolbar col-lg-1 col-md-3 col-sm-2 col-5 justify-content-end">
                             <a>
-                                <img onClick={() => startTimer()} src={play} alt=''/>
+                                <img onClick={() => props.setCountSeconds(props.countSeconds+1)} src={play} alt=''/>
                             </a>
                             <a
                                 data-bs-toggle="collapse"
@@ -79,9 +80,9 @@ function Timer() {
                         </div>
                     </div>
                     <div id="collapse-post-content2" className="timer map-collapse collapse show">
-                        <span id="hour">0</span>
-                        <span id="minutes">0</span>
-                        <span id="seconds">0</span>
+                        <span  id="hour">{props.hour}</span>
+                        <span  id="minutes">{props.minutes}</span>
+                        <span  id="seconds">{props.seconds}</span>
                     </div>
                 </div>
             </div>
