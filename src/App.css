@@ -21,8 +21,8 @@ body {
     background: #F5F5F5 !important;
 }
 
-.menu-sectoring {
-    padding: 11px 31px 8px 37px !important;
+div .menu-sectoring {
+    padding: 11px 31px 8px 37px;
     height: 64px;
 }
 
@@ -65,9 +65,9 @@ body {
     color: #505050;
 }
 
-.submenu-sectoring {
-    padding-left: 32px !important;
-    padding-right: 32px !important;
+div .submenu-sectoring {
+    padding-left: 32px;
+    padding-right: 32px;
     height: 40px;
 }
 
@@ -76,15 +76,15 @@ body {
 }
 
 .submenu-sectoring li div img {
-    margin-right: 10.79px !important;
+    margin-right: 10.79px;
 }
 
 .content-sectoring {
-    padding: 32px 32px 29px 32px !important;
+    padding: 32px 32px 29px 32px;
 }
 
-.content-right-block-sectoring {
-    margin-top: 32px !important;
+div .content-right-block-sectoring {
+    margin-top: 32px;
 }
 
 .avatar {
@@ -114,16 +114,16 @@ body {
 }
 
 .content-left-block-sectoring {
-    padding: 56px 32px 34.5px 32px !important;
+    padding: 56px 32px 34.5px 32px;
 
 }
 
 .collapse-post {
-    margin-top: 32px !important;
+    margin-top: 32px;
 }
 
 .collapse-post-header {
-    padding: 18px 21.91px 18.5px 32px !important;
+    padding: 18px 21.91px 18.5px 32px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -232,8 +232,8 @@ iframe {
     margin-right: 36px;
 }
 
-.drop-navigation-header {
-    padding: 8px 14.59px 15.56px 16px !important;
+.row .drop-navigation-header {
+    padding: 8px 14.59px 15.56px 16px;
     text-align: left;
     border: none;
     font-family: 'Roboto';
@@ -242,7 +242,7 @@ iframe {
     font-size: 14px;
     line-height: 20px;
     font-feature-settings: 'tnum' on, 'lnum' on;
-    background-color: white !important;
+    background-color: white;
     color: #505050;
     border-bottom: 1px solid #D3D8DE;
 }
@@ -255,8 +255,8 @@ iframe {
     margin-left: 50%;
 }
 
-.drop-navigation {
-    padding: 0px 16px 21px 20.17px !important;
+.row .drop-navigation {
+    padding: 0px 16px 21px 20.17px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -285,8 +285,8 @@ iframe {
     border-bottom: 1px solid #D3D8DE;
 }
 
-.drop-form {
-    padding: 0px 16px 16px 16px !important;
+.row .drop-form {
+    padding: 0px 16px 16px 16px;
 }
 
 .drop-form div {
@@ -308,7 +308,7 @@ iframe {
     color: #FFFFFF;
 }
 
-#map-preloader {
+.row .map-preloader {
     position: absolute;
     left: 0;
     right: 0;
@@ -318,66 +318,16 @@ iframe {
     height: 30vw;
 }
 
-.map-preloader-hidden {
-    display: none !important;
+.row .map-preloader-hidden {
+    display: none;
 }
 
 .map {
-    position: relative !important;
+    position: relative;
 }
 
 .map-hidden {
-    visibility: hidden !important;
-}
-
-@media (max-width: 1496px) {
-
-    .map-preloader {
-        height: 72%;
-        width: 92% !important;
-    }
-}
-
-@media (max-width: 1177px) {
-
-    .map-preloader {
-        height: 72% !important;
-        width: 89% !important;
-
-
-    }
-}
-
-@media (max-width: 992px) {
-
-    .map-preloader {
-        height: 75% !important;
-        width: 89% !important;
-    }
-}
-
-@media (max-width: 867px) {
-    .map-preloader {
-        width: 85% !important;
-    }
-}
-
-@media (max-width: 636px) {
-    .map-preloader {
-        width: 79% !important;
-    }
-}
-
-@media (max-width: 458px) {
-    .map-preloader {
-        width: 71% !important;
-    }
-}
-
-@media (max-width: 336px) {
-    .map-preloader {
-        width: 61% !important;
-    }
+    visibility: hidden;
 }
 
 @media (max-width: 330px) {
@@ -385,5 +335,4 @@ iframe {
     .submenu-style {
         font-size: 11px;
     }
-
 }
