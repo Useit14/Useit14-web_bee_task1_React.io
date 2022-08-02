@@ -40,11 +40,6 @@ function Map() {
                   className={arrow}
                 ></a>
               </div>
-              <div>
-                <a onClick={() => mapLoad()}>
-                  <img src={refresh} alt="" />
-                </a>
-              </div>
             </div>
           </div>
           <div className={`map-collapse collapse ${show}`}>
