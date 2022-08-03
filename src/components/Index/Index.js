@@ -13,6 +13,7 @@ import settings from './settings.png';
 import telegram from './telegram.png';
 import time from './time.png';
 import twitter from './twitter.png';
+import classNames from 'classnames';
 
 function Index() {
   const [show1, setShow1] = useState(false);
@@ -20,11 +21,7 @@ function Index() {
   const [show3, setShow3] = useState(false);
 
   const dropNavigationClick = (show, setShow) => {
-    if (show == true) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow(!show);
   };
 
   return (
@@ -99,9 +96,11 @@ function Index() {
                     </div>
                   </div>
                   <div
-                    className={`collapse collapse-post-content ${
-                      show1 == true ? 'show' : ''
-                    }`}
+                    className={classNames(
+                      'collapse',
+                      'collapse-post-content',
+                      show1 && 'show'
+                    )}
                   >
                     <div>
                       Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -150,9 +149,12 @@ function Index() {
                 ></a>
               </button>
               <ul
-                className={`navbar-collapse collapse drop-navigation ${
-                  show2 == true ? 'show' : ''
-                }`}
+                className={classNames(
+                  'navbar-collapse',
+                  'collapse',
+                  'drop-navigation',
+                  show2 && 'show'
+                )}
               >
                 <li className="nav-item">
                   <a className="nav-link">
@@ -226,7 +228,7 @@ function Index() {
                 ></a>
               </button>
               <div
-                className={`drop-form collapse ${show3 == true ? 'show' : ''}`}
+                className={classNames('drop-form', 'collapse', show3 && 'show')}
               >
                 <div>
                   <textarea

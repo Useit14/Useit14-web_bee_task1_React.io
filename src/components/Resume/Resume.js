@@ -15,6 +15,7 @@ import events from './events.png';
 import hh from './hh.png';
 import myProfile from './myProfile.png';
 import phone from './phone.png';
+import classNames from 'classnames';
 
 function Resume() {
   const [show1, setShow1] = useState(true);
@@ -27,11 +28,7 @@ function Resume() {
   const [show8, setShow8] = useState(false);
 
   const dropNavigationClick = (show, setShow) => {
-    if (show == true) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow(!show);
   };
 
   return (
@@ -56,9 +53,11 @@ function Resume() {
                 </div>
               </div>
               <div
-                className={`collapse-post-content collapse ${
+                className={classNames(
+                  'collapse-post-content',
+                  'collapse',
                   show1 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <div>
                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Modi
@@ -92,9 +91,13 @@ function Resume() {
                 </div>
               </div>
               <div
-                className={`row collapse-post-content collapse justify-content-between ${
+                className={classNames(
+                  'row',
+                  'collapse-post-content',
+                  'collapse',
+                  'justify-content-between',
                   show2 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <div className="col-lg-4 card bg-dark">
                   <img src={Wireframe} alt="" />
@@ -148,9 +151,11 @@ function Resume() {
                 </div>
               </div>
               <div
-                className={`collapse collapse-post-content ${
+                className={classNames(
+                  'collapse',
+                  'collapse-post-content',
                   show3 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <div>
                   Both UX designers and UI designers use visual design software,
@@ -179,9 +184,11 @@ function Resume() {
                 </div>
               </div>
               <div
-                className={`collapse collapse-post-content ${
+                className={classNames(
+                  'collapse',
+                  'collapse-post-content',
                   show4 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <div>
                   To design a product that solves a user problem, meets a user
@@ -213,9 +220,11 @@ function Resume() {
                 </div>
               </div>
               <div
-                className={`collapse collapse-post-content ${
+                className={classNames(
+                  'collapse',
+                  'collapse-post-content',
                   show5 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <div>
                   Agile, a set of project management practices popular in the
@@ -249,9 +258,11 @@ function Resume() {
                 </div>
               </div>
               <div
-                className={`collapse collapse-post-content ${
+                className={classNames(
+                  'collapse',
+                  'collapse-post-content',
                   show6 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <div>
                   Information architecture (IA) involves effectively organizing
@@ -296,9 +307,11 @@ function Resume() {
                 ></a>
               </button>
               <ul
-                className={`navbar-collapse collapse drop-navigation ${
+                className={classNames(
+                  'navbar-collapse',
+                  'collapse drop-navigation',
                   show7 == true ? 'show' : ''
-                }`}
+                )}
               >
                 <li className="nav-item">
                   <a className="nav-link">
@@ -372,7 +385,11 @@ function Resume() {
                 ></a>
               </button>
               <div
-                className={`drop-form collapse ${show8 == true ? 'show' : ''}`}
+                className={classNames(
+                  'drop-form',
+                  'collapse',
+                  show8 == true ? 'show' : ''
+                )}
               >
                 <div>
                   <img src={phone} alt="" />

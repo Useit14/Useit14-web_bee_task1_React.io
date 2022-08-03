@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import preload from './preloader.gif';
 import refresh from './refresh.png';
+import classNames from 'classnames';
 
 function Map() {
-  const [show, setShow] = useState('show');
-  const [arrow, setArrow] = useState('arrow-up');
+  const [show, setShow] = useState(true);
   const [preloader, setPreloader] = useState(true);
 
   function mapLoad() {
@@ -12,16 +12,7 @@ function Map() {
   }
 
   const dropNavigationClick = () => {
-    if (arrow == 'arrow-up') {
-      setArrow('arrow-down');
-    } else {
-      setArrow('arrow-up');
-    }
-    if (show == 'show') {
-      setShow(' ');
-    } else {
-      setShow('show');
-    }
+    setShow(!show);
   };
 
   return (
@@ -37,16 +28,23 @@ function Map() {
                 <a
                   data-bs-toggle="collapse"
                   onClick={() => dropNavigationClick()}
-                  className={arrow}
+                  className={show == true ? 'arrow-up' : 'arrow-down'}
                 ></a>
               </div>
             </div>
           </div>
-          <div className={`map-collapse collapse ${show}`}>
+          <div
+            className={classNames('map-collapse', 'collapse', show && 'show')}
+          >
             <div
-              className={`row align-items-center justify-content-center content-block-style content-block-sectoring ${
+              className={classNames(
+                'row',
+                'align-items-center',
+                'justify-content-center',
+                'content-block-style',
+                'content-block-sectoring',
                 preloader == true ? 'map-preloader' : 'map-preloader-hidden'
-              }`}
+              )}
             >
               <div className="col-lg-1 col-md-1 col-sm-1 col-1">
                 <img src={preload} alt="" />

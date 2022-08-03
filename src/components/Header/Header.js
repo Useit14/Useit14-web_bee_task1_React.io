@@ -14,6 +14,7 @@ import Union1 from './Union1.png';
 import Union2 from './Union2.png';
 import Union3 from './Union3.png';
 import { useNavigate } from 'react-router-dom';
+import classNames from 'classnames';
 
 function Header() {
   const navigate = useNavigate();
@@ -22,11 +23,7 @@ function Header() {
   const goBack = () => navigate(-1);
 
   const dropNavigationClick = () => {
-    if (show == true) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow(!show);
   };
 
   return (
@@ -44,7 +41,6 @@ function Header() {
           <ul className="nav col-lg-6 col-md-7 col-sm-auto col-xs-6">
             <li className="nav-item active">
               <a className="nav-link">
-                {' '}
                 <strong>User Pages</strong>
               </a>
             </li>
@@ -110,9 +106,12 @@ function Header() {
           </svg>
         </button>
         <div
-          className={`collapse navbar-collapse justify-content-between ${
-            show == true ? 'show' : ''
-          }`}
+          className={classNames(
+            'collapse',
+            'navbar-collapse',
+            'justify-content-between',
+            show && 'show'
+          )}
         >
           <ul className="nav col-lg-4 submenu bg-light">
             <li className="nav-item">
@@ -196,4 +195,4 @@ function Header() {
   );
 }
 
-export default Header
+export default Header;

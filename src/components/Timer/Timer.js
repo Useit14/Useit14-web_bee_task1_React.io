@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import play from './play.png';
 import refresh from './refresh.png';
+import classNames from 'classnames';
 
 function Timer(props) {
-  let timerId = 0;
-  let timerRefresh = 0;
   const [show, setShow] = useState(true);
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [hour, setHour] = useState(0);
 
   const getSeconds = () => {
     return props.countSeconds - (hour * 3600 + minutes * 60);
@@ -20,42 +16,12 @@ function Timer(props) {
     return Math.floor(props.countSeconds / 3600);
   };
 
-  useEffect(() => {
-    if (props.countSeconds > 0) {
-      timerId = setTimeout(() => {
-        props.setCountSeconds(props.countSeconds + 1);
-        printTimer();
-      }, 1000);
-    }
-  });
-
-  function startTimer() {
-    if (props.countSeconds == 0) {
-      props.setCountSeconds(props.countSeconds + 1);
-    }
-  }
-
-  function printTimer() {
-    setSeconds(getSeconds());
-    setMinutes(getMinutes());
-    setHour(getHour);
-  }
-
-  function refreshTimer() {
-    clearTimeout(timerId);
-    clearTimeout(timerRefresh);
-    timerRefresh = setTimeout(() => {
-      props.setCountSeconds(1);
-      printTimer();
-    }, 1000);
-  }
+  let hour = getHour();
+  let minutes = getMinutes();
+  let seconds = getSeconds();
 
   const dropNavigationClick = () => {
-    if (show == true) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
+    setShow(!show);
   };
 
   return (
@@ -68,7 +34,7 @@ function Timer(props) {
             </div>
             <div className="toolbar col-lg-1 col-md-3 col-sm-2 col-5 justify-content-end">
               <a>
-                <img onClick={() => startTimer()} src={play} alt="" />
+                <img onClick={() => props.startTimer()} src={play} alt="" />
               </a>
               <a
                 data-bs-toggle="collapse"
@@ -76,14 +42,21 @@ function Timer(props) {
                 onClick={() => dropNavigationClick()}
               ></a>
               <a>
-                <img onClick={() => refreshTimer()} src={refresh} alt="" />
+                <img
+                  onClick={() => props.refreshTimer()}
+                  src={refresh}
+                  alt=""
+                />
               </a>
             </div>
           </div>
           <div
-            className={`timer map-collapse collapse ${
-              show == true ? 'show' : ''
-            }`}
+            className={classNames(
+              'timer',
+              'map-collapse',
+              'collapse',
+              show && 'show'
+            )}
           >
             <span id="hour">{hour}</span>
             <span id="minutes">{minutes}</span>
